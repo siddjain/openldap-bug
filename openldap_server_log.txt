@@ -1,0 +1,523 @@
+WITSC02X6385JGH:temp sjain68$ docker logs -f jnj-ldap-server
+*** CONTAINER_LOG_LEVEL = 4 (debug)
+*** Copy /container/service to /container/run/service
+*** Search service in CONTAINER_SERVICE_DIR = /container/run/service :
+*** link /container/run/service/:ssl-tools/startup.sh to /container/run/startup/:ssl-tools
+*** link /container/run/service/slapd/startup.sh to /container/run/startup/slapd
+*** link /container/run/service/slapd/process.sh to /container/run/process/slapd/run
+*** Set environment for startup files
+*** ignore : LANG = en_US.UTF-8 (keep LANG = en_US.UTF-8 )
+*** ignore : LANGUAGE = en_US.UTF-8 (keep LANGUAGE = en_US:en )
+*** Environment files will be proccessed in this order : 
+Caution: previously defined variables will not be overriden.
+/container/environment/99-default/default.startup.yaml
+/container/environment/99-default/default.yaml
+
+*** --- process file : /container/environment/99-default/default.startup.yaml ---
+*** ignore : LDAP_TLS_ENFORCE = False (keep LDAP_TLS_ENFORCE = true )
+*** ignore : LDAP_TLS_CRT_FILENAME = ldap.crt (keep LDAP_TLS_CRT_FILENAME = jnj-ldap-server-tls.pem )
+*** ignore : LDAP_ADMIN_PASSWORD = admin (keep LDAP_ADMIN_PASSWORD = superman )
+*** ignore : LDAP_DOMAIN = example.org (keep LDAP_DOMAIN = jnj.com )
+*** ignore : LDAP_TLS_KEY_FILENAME = ldap.key (keep LDAP_TLS_KEY_FILENAME = jnj-ldap-server-tls.key )
+*** ignore : LDAP_TLS_VERIFY_CLIENT = demand (keep LDAP_TLS_VERIFY_CLIENT = never )
+*** ignore : LDAP_TLS_CA_CRT_FILENAME = ca.crt (keep LDAP_TLS_CA_CRT_FILENAME = jnj-ca-chain.pem )
+*** --- process file : /container/environment/99-default/default.yaml ---
+*** Run commands before startup...
+*** Running /container/run/startup/:ssl-tools...
+*** ------------ Environment dump ------------
+*** LDAP_LOG_LEVEL = 256
+*** SSL_HELPER_AUTO_RENEW_SERVICES_IMPACTED = slapd
+*** LDAP_REPLICATION = False
+*** LDAP_TLS_VERIFY_CLIENT = never
+*** LC_CTYPE = en_US.UTF-8
+*** LDAP_ADMIN_PASSWORD = superman
+*** INITRD = no
+*** LDAP_DOMAIN = jnj.com
+*** LDAP_REPLICATION_DB_SYNCPROV = binddn="cn=admin,$LDAP_BASE_DN" bindmethod=simple credentials="$LDAP_ADMIN_PASSWORD" searchbase="$LDAP_BASE_DN" type=refreshAndPersist interval=00:00:00:10 retry="60 +" timeout=1 starttls=critical
+*** PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*** LDAP_SSL_HELPER_PREFIX = ldap
+*** LDAP_TLS_KEY_FILENAME = jnj-ldap-server-tls.key
+*** LDAP_READONLY_USER_PASSWORD = readonly
+*** LDAP_TLS_CA_CRT_FILENAME = jnj-ca-chain.pem
+*** LDAP_READONLY_USER = False
+*** CONTAINER_SERVICE_DIR = /container/run/service
+*** LANGUAGE = en_US:en
+*** LDAP_REPLICATION_HOSTS_ROW_1 = ldap://ldap.example.org
+*** LDAP_REPLICATION_HOSTS_ROW_2 = ldap://ldap2.example.org
+*** LDAP_READONLY_USER_USERNAME = readonly
+*** LDAP_BASE_DN = 
+*** HOME = /root
+*** LDAP_BACKEND = mdb
+*** LDAP_TLS = True
+*** LDAP_TLS_DH_PARAM_FILENAME = dhparam.pem
+*** LDAP_NOFILE = 1024
+*** LDAP_ORGANISATION = Example Inc.
+*** CONTAINER_LOG_LEVEL = 4
+*** LC_ALL = en_US.UTF-8
+*** KEEP_EXISTING_CONFIG = False
+*** LDAP_TLS_CRT_FILENAME = jnj-ldap-server-tls.pem
+*** LANG = en_US.UTF-8
+*** LDAP_REMOVE_CONFIG_AFTER_SETUP = True
+*** HOSTNAME = jnj-ldap-server
+*** CONTAINER_STATE_DIR = /container/run/state
+*** LDAP_REPLICATION_CONFIG_SYNCPROV = binddn="cn=admin,cn=config" bindmethod=simple credentials="$LDAP_CONFIG_PASSWORD" searchbase="cn=config" type=refreshAndPersist retry="60 +" timeout=1 starttls=critical
+*** LDAP_RFC2307BIS_SCHEMA = False
+*** LDAP_REPLICATION_HOSTS = #COMPLEX_BASH_ENV:TABLE: LDAP_REPLICATION_HOSTS_ROW_1 LDAP_REPLICATION_HOSTS_ROW_2
+*** LDAP_CONFIG_PASSWORD = config
+*** LDAP_TLS_CIPHER_SUITE = SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC
+*** LDAP_TLS_ENFORCE = true
+*** ------------------------------------------
+*** Running /container/run/startup/slapd...
+*** ------------ Environment dump ------------
+*** LDAP_LOG_LEVEL = 256
+*** SSL_HELPER_AUTO_RENEW_SERVICES_IMPACTED = slapd
+*** LDAP_REPLICATION = False
+*** LDAP_READONLY_USER_PASSWORD = readonly
+*** LC_CTYPE = en_US.UTF-8
+*** LDAP_ADMIN_PASSWORD = superman
+*** INITRD = no
+*** PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*** LDAP_REPLICATION_DB_SYNCPROV = binddn="cn=admin,$LDAP_BASE_DN" bindmethod=simple credentials="$LDAP_ADMIN_PASSWORD" searchbase="$LDAP_BASE_DN" type=refreshAndPersist interval=00:00:00:10 retry="60 +" timeout=1 starttls=critical
+*** HOME = /root
+*** LDAP_SSL_HELPER_PREFIX = ldap
+*** LDAP_BASE_DN = 
+*** LDAP_TLS_VERIFY_CLIENT = never
+*** LANG = en_US.UTF-8
+*** LDAP_READONLY_USER = False
+*** CONTAINER_SERVICE_DIR = /container/run/service
+*** LANGUAGE = en_US:en
+*** LDAP_REPLICATION_HOSTS_ROW_1 = ldap://ldap.example.org
+*** LDAP_REPLICATION_HOSTS_ROW_2 = ldap://ldap2.example.org
+*** LDAP_READONLY_USER_USERNAME = readonly
+*** LDAP_TLS_KEY_FILENAME = jnj-ldap-server-tls.key
+*** LDAP_DOMAIN = jnj.com
+*** LDAP_REMOVE_CONFIG_AFTER_SETUP = True
+*** LDAP_BACKEND = mdb
+*** LDAP_TLS = True
+*** LDAP_TLS_DH_PARAM_FILENAME = dhparam.pem
+*** LDAP_NOFILE = 1024
+*** LDAP_ORGANISATION = Example Inc.
+*** CONTAINER_LOG_LEVEL = 4
+*** LC_ALL = en_US.UTF-8
+*** KEEP_EXISTING_CONFIG = False
+*** LDAP_TLS_CRT_FILENAME = jnj-ldap-server-tls.pem
+*** HOSTNAME = jnj-ldap-server
+*** CONTAINER_STATE_DIR = /container/run/state
+*** LDAP_TLS_CA_CRT_FILENAME = jnj-ca-chain.pem
+*** LDAP_REPLICATION_CONFIG_SYNCPROV = binddn="cn=admin,cn=config" bindmethod=simple credentials="$LDAP_CONFIG_PASSWORD" searchbase="cn=config" type=refreshAndPersist retry="60 +" timeout=1 starttls=critical
+*** LDAP_RFC2307BIS_SCHEMA = False
+*** LDAP_REPLICATION_HOSTS = #COMPLEX_BASH_ENV:TABLE: LDAP_REPLICATION_HOSTS_ROW_1 LDAP_REPLICATION_HOSTS_ROW_2
+*** LDAP_CONFIG_PASSWORD = config
+*** LDAP_TLS_CIPHER_SUITE = SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC
+*** LDAP_TLS_ENFORCE = true
+*** ------------------------------------------
+Database and config directory are empty...
+Init new ldap server...
+  Backing up /etc/ldap/slapd.d in /var/backups/slapd-2.4.47+dfsg-3~bpo9+1... done.
+  Creating initial configuration... done.
+  Creating LDAP directory... done.
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Start OpenLDAP...
+Waiting for OpenLDAP to start...
+5cbf3e84 @(#) $OpenLDAP: slapd  (Feb  9 2019 17:02:42) $
+	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+5cbf3e84 daemon: bind(8) failed errno=99 (Cannot assign requested address)
+5cbf3e84 slapd starting
+Add bootstrap schemas...
+5cbf3e84 conn=1000 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1000 op=0 BIND dn="" method=163
+5cbf3e84 conn=1000 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1000 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1000 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1000 op=1 ADD dn="cn=ppolicy,cn=schema,cn=config"
+5cbf3e84 conn=1000 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1000 op=2 UNBIND
+5cbf3e84 conn=1000 fd=12 closed
+adding new entry "cn=ppolicy,cn=schema,cn=config"
+config file testing succeeded
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/dhcp.ldif
+5cbf3e84 conn=1001 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1001 op=0 BIND dn="" method=163
+5cbf3e84 conn=1001 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1001 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1001 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1001 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1001 op=1 SRCH attr=cn
+5cbf3e84 conn=1001 op=1 SEARCH RESULT tag=101 err=0 nentries=6 text=
+5cbf3e84 conn=1001 op=2 UNBIND
+5cbf3e84 conn=1001 fd=12 closed
+5cbf3e84 conn=1002 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1002 op=0 BIND dn="" method=163
+5cbf3e84 conn=1002 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1002 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1002 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1002 op=1 ADD dn="cn=dhcp,cn=schema,cn=config"
+5cbf3e84 conn=1002 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1002 op=2 UNBIND
+5cbf3e84 conn=1002 fd=12 closed
+adding new entry "cn=dhcp,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/dnszone.ldif
+5cbf3e84 conn=1003 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1003 op=0 BIND dn="" method=163
+5cbf3e84 conn=1003 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1003 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1003 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1003 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1003 op=1 SRCH attr=cn
+5cbf3e84 conn=1003 op=1 SEARCH RESULT tag=101 err=0 nentries=7 text=
+5cbf3e84 conn=1003 op=2 UNBIND
+5cbf3e84 conn=1003 fd=12 closed
+5cbf3e84 conn=1004 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1004 op=0 BIND dn="" method=163
+5cbf3e84 conn=1004 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1004 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1004 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1004 op=1 ADD dn="cn=dnszone,cn=schema,cn=config"
+5cbf3e84 conn=1004 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1004 op=2 UNBIND
+5cbf3e84 conn=1004 fd=12 closed
+adding new entry "cn=dnszone,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/mail.ldif
+5cbf3e84 conn=1005 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1005 op=0 BIND dn="" method=163
+5cbf3e84 conn=1005 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1005 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1005 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1005 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1005 op=1 SRCH attr=cn
+5cbf3e84 conn=1005 op=1 SEARCH RESULT tag=101 err=0 nentries=8 text=
+5cbf3e84 conn=1005 op=2 UNBIND
+5cbf3e84 conn=1005 fd=12 closed
+5cbf3e84 conn=1006 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1006 op=0 BIND dn="" method=163
+5cbf3e84 conn=1006 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1006 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1006 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1006 op=1 ADD dn="cn=mail,cn=schema,cn=config"
+5cbf3e84 conn=1006 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1006 op=2 UNBIND
+5cbf3e84 conn=1006 fd=12 closed
+adding new entry "cn=mail,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/mmc.ldif
+5cbf3e84 conn=1007 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1007 op=0 BIND dn="" method=163
+5cbf3e84 conn=1007 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1007 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1007 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1007 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1007 op=1 SRCH attr=cn
+5cbf3e84 conn=1007 op=1 SEARCH RESULT tag=101 err=0 nentries=9 text=
+5cbf3e84 conn=1007 op=2 UNBIND
+5cbf3e84 conn=1007 fd=12 closed
+5cbf3e84 conn=1008 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1008 op=0 BIND dn="" method=163
+5cbf3e84 conn=1008 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1008 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1008 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1008 op=1 ADD dn="cn=mmc,cn=schema,cn=config"
+5cbf3e84 conn=1008 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1008 op=2 UNBIND
+5cbf3e84 conn=1008 fd=12 closed
+adding new entry "cn=mmc,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/openssh-lpk.ldif
+5cbf3e84 conn=1009 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1009 op=0 BIND dn="" method=163
+5cbf3e84 conn=1009 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1009 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1009 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1009 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1009 op=1 SRCH attr=cn
+5cbf3e84 conn=1009 op=1 SEARCH RESULT tag=101 err=0 nentries=10 text=
+5cbf3e84 conn=1009 op=2 UNBIND
+5cbf3e84 conn=1009 fd=12 closed
+5cbf3e84 conn=1010 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1010 op=0 BIND dn="" method=163
+5cbf3e84 conn=1010 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1010 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1010 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1010 op=1 ADD dn="cn=openssh-lpk,cn=schema,cn=config"
+5cbf3e84 conn=1010 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1010 op=2 UNBIND
+5cbf3e84 conn=1010 fd=12 closed
+adding new entry "cn=openssh-lpk,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/quota.ldif
+5cbf3e84 conn=1011 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1011 op=0 BIND dn="" method=163
+5cbf3e84 conn=1011 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1011 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1011 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1011 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1011 op=1 SRCH attr=cn
+5cbf3e84 conn=1011 op=1 SEARCH RESULT tag=101 err=0 nentries=11 text=
+5cbf3e84 conn=1011 op=2 UNBIND
+5cbf3e84 conn=1011 fd=12 closed
+5cbf3e84 conn=1012 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1012 op=0 BIND dn="" method=163
+5cbf3e84 conn=1012 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1012 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1012 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1012 op=1 ADD dn="cn=quota,cn=schema,cn=config"
+5cbf3e84 conn=1012 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1012 op=2 UNBIND
+5cbf3e84 conn=1012 fd=12 closed
+adding new entry "cn=quota,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/radius.ldif
+5cbf3e84 conn=1013 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1013 op=0 BIND dn="" method=163
+5cbf3e84 conn=1013 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1013 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1013 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1013 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1013 op=1 SRCH attr=cn
+5cbf3e84 conn=1013 op=1 SEARCH RESULT tag=101 err=0 nentries=12 text=
+5cbf3e84 conn=1013 op=2 UNBIND
+5cbf3e84 conn=1013 fd=12 closed
+5cbf3e84 conn=1014 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1014 op=0 BIND dn="" method=163
+5cbf3e84 conn=1014 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1014 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1014 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1014 op=1 ADD dn="cn=radius,cn=schema,cn=config"
+5cbf3e84 conn=1014 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1014 op=2 UNBIND
+5cbf3e84 conn=1014 fd=12 closed
+adding new entry "cn=radius,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/samba.ldif
+5cbf3e84 conn=1015 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1015 op=0 BIND dn="" method=163
+5cbf3e84 conn=1015 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1015 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1015 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1015 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1015 op=1 SRCH attr=cn
+5cbf3e84 conn=1015 op=1 SEARCH RESULT tag=101 err=0 nentries=13 text=
+5cbf3e84 conn=1015 op=2 UNBIND
+5cbf3e84 conn=1015 fd=12 closed
+5cbf3e84 conn=1016 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1016 op=0 BIND dn="" method=163
+5cbf3e84 conn=1016 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1016 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1016 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1016 op=1 ADD dn="cn=samba,cn=schema,cn=config"
+5cbf3e84 conn=1016 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1016 op=2 UNBIND
+5cbf3e84 conn=1016 fd=12 closed
+adding new entry "cn=samba,cn=schema,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/schema/mmc/zarafa.ldif
+5cbf3e84 conn=1017 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1017 op=0 BIND dn="" method=163
+5cbf3e84 conn=1017 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1017 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1017 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1017 op=1 SRCH base="cn=schema,cn=config" scope=2 deref=0 filter="(objectClass=*)"
+5cbf3e84 conn=1017 op=1 SRCH attr=cn
+5cbf3e84 conn=1017 op=1 SEARCH RESULT tag=101 err=0 nentries=14 text=
+5cbf3e84 conn=1017 op=2 UNBIND
+5cbf3e84 conn=1017 fd=12 closed
+5cbf3e84 conn=1018 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1018 op=0 BIND dn="" method=163
+5cbf3e84 conn=1018 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1018 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1018 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1018 op=1 ADD dn="cn=zarafa,cn=schema,cn=config"
+5cbf3e84 conn=1018 op=1 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1018 op=2 UNBIND
+5cbf3e84 conn=1018 fd=12 closed
+adding new entry "cn=zarafa,cn=schema,cn=config"
+Add image bootstrap ldif...
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/01-config-password.ldif
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/01-config-password.ldif
+5cbf3e84 conn=1019 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1019 op=0 BIND dn="" method=163
+5cbf3e84 conn=1019 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1019 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1019 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1019 op=1 MOD dn="cn=config"
+5cbf3e84 conn=1019 op=1 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1019 op=2 MOD dn="olcDatabase={0}config,cn=config"
+5cbf3e84 conn=1019 op=2 MOD attr=olcRootPW
+5cbf3e84 conn=1019 op=2 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1019 op=3 UNBIND
+5cbf3e84 conn=1019 fd=12 closed
+modifying entry "cn=config"
+
+modifying entry "olcDatabase={0}config,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/02-security.ldif
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/02-security.ldif
+5cbf3e84 conn=1020 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1020 op=0 BIND dn="" method=163
+5cbf3e84 conn=1020 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1020 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1020 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1020 op=1 MOD dn="olcDatabase={1}mdb,cn=config"
+5cbf3e84 conn=1020 op=1 MOD attr=olcAccess olcAccess
+5cbf3e84 slapd: line 0: rootdn is always granted unlimited privileges.
+5cbf3e84 slapd: line 0: rootdn is always granted unlimited privileges.
+5cbf3e84 conn=1020 op=1 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1020 op=2 UNBIND
+5cbf3e84 conn=1020 fd=12 closed
+modifying entry "olcDatabase={1}mdb,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/03-memberOf.ldif
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/03-memberOf.ldif
+5cbf3e84 conn=1021 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1021 op=0 BIND dn="" method=163
+5cbf3e84 conn=1021 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1021 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1021 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1021 op=1 MOD dn="cn=module{0},cn=config"
+5cbf3e84 conn=1021 op=1 MOD attr=olcModuleLoad
+5cbf3e84 conn=1021 op=1 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1021 op=2 ADD dn="olcOverlay={0}memberof,olcDatabase={1}mdb,cn=config"
+5cbf3e84 conn=1021 op=2 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1021 op=3 UNBIND
+5cbf3e84 conn=1021 fd=12 closed
+modifying entry "cn=module{0},cn=config"
+
+adding new entry "olcOverlay={0}memberof,olcDatabase={1}mdb,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/04-refint.ldif
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/04-refint.ldif
+5cbf3e84 conn=1022 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1022 op=0 BIND dn="" method=163
+5cbf3e84 conn=1022 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1022 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1022 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1022 op=1 MOD dn="cn=module{0},cn=config"
+5cbf3e84 conn=1022 op=1 MOD attr=olcModuleLoad
+5cbf3e84 conn=1022 op=1 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1022 op=2 ADD dn="olcOverlay={1}refint,olcDatabase={1}mdb,cn=config"
+5cbf3e84 conn=1022 op=2 RESULT tag=105 err=0 text=
+5cbf3e84 conn=1022 op=3 UNBIND
+5cbf3e84 conn=1022 fd=12 closed
+modifying entry "cn=module{0},cn=config"
+
+adding new entry "olcOverlay={1}refint,olcDatabase={1}mdb,cn=config"
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/05-index.ldif
+Processing file /container/run/service/slapd/assets/config/bootstrap/ldif/05-index.ldif
+5cbf3e84 conn=1023 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e84 conn=1023 op=0 BIND dn="" method=163
+5cbf3e84 conn=1023 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e84 conn=1023 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e84 conn=1023 op=0 RESULT tag=97 err=0 text=
+5cbf3e84 conn=1023 op=1 MOD dn="olcDatabase={1}mdb,cn=config"
+5cbf3e84 conn=1023 op=1 MOD attr=olcDbIndex
+5cbf3e84 conn=1023 op=1 RESULT tag=103 err=0 text=
+5cbf3e84 conn=1023 op=2 UNBIND
+5cbf3e84 conn=1023 fd=12 closed
+modifying entry "olcDatabase={1}mdb,cn=config"
+Add custom bootstrap ldif...
+Add TLS config...
+Hi! I'm ssl-helper, what button should i press ?
+cfssl-helper is launched, everybody on the floor!
+Files /container/run/service/slapd/assets/certs/jnj-ldap-server-tls.pem and /container/run/service/slapd/assets/certs/jnj-ldap-server-tls.key exists, fix files permissions
+Generating DH parameters, 2048 bit long safe prime, generator 2
+This is going to take a long time
+...............+......+.............+.....................+...........+............................................................................................................................+.............+..............................................................................................................................................................................................................................................+.....................................................................+.........................+.................................................................................................................+........................................................................................................................................+.....................................................+................................................................................................................................................................................................+.................................................................................................................................................................+...........+.........................................................................................................................................................................................................................................................................................+...........................+.........................................................................................................................................................................................................+........................+...............................................................................................................................................................+.......................................................................+....+......................................................................................................................................................++*++*++*++*
+5cbf3e91 conn=1024 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e91 conn=1024 op=0 BIND dn="" method=163
+5cbf3e91 conn=1024 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e91 conn=1024 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e91 conn=1024 op=0 RESULT tag=97 err=0 text=
+5cbf3e91 conn=1024 op=1 MOD dn="cn=config"
+5cbf3e91 conn=1024 op=1 MOD attr=olcTLSCipherSuite olcTLSCACertificateFile olcTLSCertificateFile olcTLSCertificateKeyFile olcTLSDHParamFile olcTLSVerifyClient
+5cbf3e91 conn=1024 op=1 RESULT tag=103 err=0 text=
+5cbf3e91 conn=1024 op=2 UNBIND
+5cbf3e91 conn=1024 fd=12 closed
+modifying entry "cn=config"
+Add enforce TLS...
+5cbf3e91 conn=1025 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e91 conn=1025 op=0 BIND dn="" method=163
+5cbf3e91 conn=1025 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e91 conn=1025 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=71
+5cbf3e91 conn=1025 op=0 RESULT tag=97 err=0 text=
+5cbf3e91 conn=1025 op=1 MOD dn="cn=config"
+5cbf3e91 conn=1025 op=1 MOD attr=olcSecurity olcLocalSSF
+5cbf3e91 conn=1025 op=1 RESULT tag=103 err=0 text=
+5cbf3e91 conn=1025 op=2 UNBIND
+5cbf3e91 conn=1025 fd=12 closed
+modifying entry "cn=config"
+Disable replication config...
+5cbf3e91 conn=1026 fd=12 ACCEPT from PATH=/var/run/slapd/ldapi (PATH=/var/run/slapd/ldapi)
+5cbf3e91 conn=1026 op=0 BIND dn="" method=163
+5cbf3e91 conn=1026 op=0 BIND authcid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" authzid="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth"
+5cbf3e91 conn=1026 op=0 BIND dn="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" mech=EXTERNAL sasl_ssf=0 ssf=128
+5cbf3e91 conn=1026 op=0 RESULT tag=97 err=0 text=
+5cbf3e91 conn=1026 op=1 MOD dn="olcDatabase={1}mdb,cn=config"
+5cbf3e91 conn=1026 op=1 MOD attr=olcSyncRepl olcMirrorMode olcLimits
+5cbf3e91 conn=1026 op=1 RESULT tag=103 err=16 text=modify/delete: olcSyncrepl: no such attribute
+5cbf3e91 conn=1026 op=2 DEL dn="olcOverlay=syncprov,olcDatabase={1}mdb,cn=config"
+5cbf3e91 conn=1026 op=2 RESULT tag=107 err=53 text=
+5cbf3e91 conn=1026 op=3 MOD dn="olcDatabase={0}config,cn=config"
+5cbf3e91 conn=1026 op=3 MOD attr=olcSyncRepl olcMirrorMode
+5cbf3e91 conn=1026 op=3 RESULT tag=103 err=16 text=modify/delete: olcSyncrepl: no such attribute
+5cbf3e91 conn=1026 op=4 DEL dn="olcOverlay=syncprov,olcDatabase={0}config,cn=config"
+5cbf3e91 conn=1026 op=4 RESULT tag=107 err=53 text=
+5cbf3e91 conn=1026 op=5 MOD dn="cn=config"
+5cbf3e91 conn=1026 op=5 MOD attr=olcServerID
+5cbf3e91 conn=1026 op=5 RESULT tag=103 err=16 text=modify/delete: olcServerID: no such attribute
+5cbf3e91 conn=1026 op=6 UNBIND
+5cbf3e91 conn=1026 fd=12 closed
+ldap_modify: No such attribute (16)
+	additional info: modify/delete: olcSyncrepl: no such attribute
+ldap_delete: Server is unwilling to perform (53)
+ldap_modify: No such attribute (16)
+	additional info: modify/delete: olcSyncrepl: no such attribute
+ldap_delete: Server is unwilling to perform (53)
+ldap_modify: No such attribute (16)
+	additional info: modify/delete: olcServerID: no such attribute
+modifying entry "olcDatabase={1}mdb,cn=config"
+
+deleting entry "olcOverlay=syncprov,olcDatabase={1}mdb,cn=config"
+
+modifying entry "olcDatabase={0}config,cn=config"
+
+deleting entry "olcOverlay=syncprov,olcDatabase={0}config,cn=config"
+
+modifying entry "cn=config"
+Stop OpenLDAP...
+5cbf3e91 daemon: shutdown requested and initiated.
+5cbf3e91 slapd shutdown: waiting for 0 operations/tasks to finish
+5cbf3e91 slapd stopped.
+Configure ldap client TLS configuration...
+Remove config files...
+First start is done...
+*** Set environment for container process
+*** Remove file /container/environment/99-default/default.startup.yaml
+*** ignore : LANG = en_US.UTF-8 (keep LANG = en_US.UTF-8 )
+*** ignore : LANGUAGE = en_US.UTF-8 (keep LANGUAGE = en_US:en )
+*** Environment files will be proccessed in this order : 
+Caution: previously defined variables will not be overriden.
+/container/environment/99-default/default.yaml
+
+*** --- process file : /container/environment/99-default/default.yaml ---
+*** Run commands before process...
+*** ------------ Environment dump ------------
+*** LDAP_LOG_LEVEL = 256
+*** LDAP_TLS_VERIFY_CLIENT = never
+*** LC_CTYPE = en_US.UTF-8
+*** LDAP_ADMIN_PASSWORD = superman
+*** INITRD = no
+*** LC_ALL = en_US.UTF-8
+*** PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*** LDAP_TLS_KEY_FILENAME = jnj-ldap-server-tls.key
+*** LDAP_TLS_CA_CRT_FILENAME = jnj-ca-chain.pem
+*** CONTAINER_SERVICE_DIR = /container/run/service
+*** LANGUAGE = en_US:en
+*** HOME = /root
+*** LANG = en_US.UTF-8
+*** CONTAINER_LOG_LEVEL = 4
+*** LDAP_DOMAIN = jnj.com
+*** LDAP_TLS_CRT_FILENAME = jnj-ldap-server-tls.pem
+*** HOSTNAME = jnj-ldap-server
+*** CONTAINER_STATE_DIR = /container/run/state
+*** LDAP_NOFILE = 1024
+*** LDAP_TLS_ENFORCE = true
+*** ------------------------------------------
+*** Running /container/run/process/slapd/run...
+*** /container/run/process/slapd/run started as PID 444
+5cbf3e91 @(#) $OpenLDAP: slapd  (Feb  9 2019 17:02:42) $
+	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+5cbf3e91 slapd starting
+5cbf3eab conn=1000 fd=12 ACCEPT from IP=172.17.0.1:51536 (IP=0.0.0.0:636)
+5cbf3eab conn=1000 fd=12 TLS established tls_ssf=256 ssf=256
+

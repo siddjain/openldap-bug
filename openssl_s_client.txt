@@ -1,0 +1,107 @@
+WITSC02X6385JGH:temp sjain68$ openssl s_client -connect localhost:636 -state -nbio -CAfile jnj-ca-chain.pem -showcerts
+CONNECTED(00000005)
+turning on non blocking io
+SSL_connect:before/connect initialization
+SSL_connect:unknown state
+SSL_connect:error in unknown state
+write R BLOCK
+SSL_connect:SSLv3 read server hello A
+depth=2 C = US, ST = WA, L = Bellevue, O = Johnson & Johnson, CN = rca-jnj
+verify return:1
+depth=1 C = US, ST = WA, L = Bellevue, O = Johnson & Johnson, OU = jnj + OU = client, CN = rca-jnj-admin
+verify error:num=7:certificate signature failure
+verify return:0
+SSL_connect:SSLv3 read server certificate A
+SSL_connect:SSLv3 read server key exchange A
+SSL_connect:SSLv3 read server done A
+SSL_connect:SSLv3 write client key exchange A
+SSL_connect:SSLv3 write change cipher spec A
+SSL_connect:SSLv3 write finished A
+SSL_connect:SSLv3 flush data
+SSL_connect:error in SSLv3 read finished A
+SSL_connect:error in SSLv3 read finished A
+read R BLOCK
+SSL_connect:SSLv3 read finished A
+read R BLOCK
+---
+Certificate chain
+ 0 s:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/OU=jnj/OU=client/CN=jnj-ldap-server
+   i:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/OU=jnj/OU=client/CN=rca-jnj-admin
+-----BEGIN CERTIFICATE-----
+MIIDBzCCAq2gAwIBAgIUcxrGrCSwJwlQhBEuKztfLgRrtygwCgYIKoZIzj0EAwIw
+fjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMREwDwYDVQQHEwhCZWxsZXZ1ZTEa
+MBgGA1UECgwRSm9obnNvbiAmIEpvaG5zb24xGzAKBgNVBAsTA2puajANBgNVBAsT
+BmNsaWVudDEWMBQGA1UEAxMNcmNhLWpuai1hZG1pbjAeFw0xOTA0MjIxNzE0MDBa
+Fw0yMDA0MjExNzE5MDBaMIGAMQswCQYDVQQGEwJVUzELMAkGA1UECBMCV0ExETAP
+BgNVBAcTCEJlbGxldnVlMRowGAYDVQQKDBFKb2huc29uICYgSm9obnNvbjEbMAoG
+A1UECxMDam5qMA0GA1UECxMGY2xpZW50MRgwFgYDVQQDEw9qbmotbGRhcC1zZXJ2
+ZXIwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARutu4G452HY8vYKJLw9VXmIuz+
+X1XNNwyI6q7KzzwNmTwzWyHIVzxjqNTsTRqY0L0lLI1cko2LsIACqnJTed7yo4IB
+BDCCAQAwDgYDVR0PAQH/BAQDAgOoMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEF
+BQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBTPS+Zc8+ZDmpVS9XerpVD1gYL7
+cjAfBgNVHSMEGDAWgBTbr7PEPX6ZIN6APotjhLkd6hPeqDAaBgNVHREEEzARgg9q
+bmotbGRhcC1zZXJ2ZXIwZQYIKgMEBQYHCAEEWXsiYXR0cnMiOnsiaGYuQWZmaWxp
+YXRpb24iOiJqbmoiLCJoZi5FbnJvbGxtZW50SUQiOiJqbmotbGRhcC1zZXJ2ZXIi
+LCJoZi5UeXBlIjoiY2xpZW50In19MAoGCCqGSM49BAMCA0gAMEUCIQDBbbexORUa
+nrBJG8iSkADdOIW/ZOK7kbpLJ4x6GdTO8gIgfzOqW/9ZJKFM3PBls6bEVacoRLX9
+AklAHxajASZK+UU=
+-----END CERTIFICATE-----
+ 1 s:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/OU=jnj/OU=client/CN=rca-jnj-admin
+   i:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/CN=rca-jnj
+-----BEGIN CERTIFICATE-----
+MIICQTCCAeegAwIBAgIUBU9O3Wb3BDS8YuWRLYaKClbA9ZcwCgYIKoZIzj0EAwIw
+WzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMREwDwYDVQQHEwhCZWxsZXZ1ZTEa
+MBgGA1UECgwRSm9obnNvbiAmIEpvaG5zb24xEDAOBgNVBAMTB3JjYS1qbmowHhcN
+MTkwMjAxMjMxOTAwWhcNMjQwMTMxMjMyNDAwWjB+MQswCQYDVQQGEwJVUzELMAkG
+A1UECBMCV0ExETAPBgNVBAcTCEJlbGxldnVlMRowGAYDVQQKDBFKb2huc29uICYg
+Sm9obnNvbjEbMAoGA1UECxMDam5qMA0GA1UECxMGY2xpZW50MRYwFAYDVQQDEw1y
+Y2Etam5qLWFkbWluMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEk4b8f5mWq+jf
+iMKQBVI8uU7btAF/LSSdXoOXYPW8JyJ23v5wtwRiQ/g4Al/6aIchvAC4QhJRUnz0
+DMKuI7GCp6NmMGQwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQAw
+HQYDVR0OBBYEFNuvs8Q9fpkg3oA+i2OEuR3qE96oMB8GA1UdIwQYMBaAFBGV3Han
+Nf1T5i8fvDh239lt5W9DMAoGCCqGSM49BAMCA0gAMEUCIQD/4+AUOMBdofQEVsH2
+2A6UGiJQvuplLEBA9in0cZTcCQIgcV5K+KCs3a5RNYUWdllakGx8c1f6ISrmk4an
+gjeXphQ=
+-----END CERTIFICATE-----
+ 2 s:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/CN=rca-jnj
+   i:/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/CN=rca-jnj
+-----BEGIN CERTIFICATE-----
+MIIB/TCCAaOgAwIBAgIUSsxdq02aJCyaIHkIRxRdKvWYG9swCgYIKoZIzj0EAwIw
+WzELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAldBMREwDwYDVQQHEwhCZWxsZXZ1ZTEa
+MBgGA1UECgwRSm9obnNvbiAmIEpvaG5zb24xEDAOBgNVBAMTB3JjYS1qbmowHhcN
+MTkwMjAxMjExNDAwWhcNMzQwMTI4MjExNDAwWjBbMQswCQYDVQQGEwJVUzELMAkG
+A1UECBMCV0ExETAPBgNVBAcTCEJlbGxldnVlMRowGAYDVQQKDBFKb2huc29uICYg
+Sm9obnNvbjEQMA4GA1UEAxMHcmNhLWpuajBZMBMGByqGSM49AgEGCCqGSM49AwEH
+A0IABCF30Cn+O5sD/9n6d3IQQEGiceCTD7gG/5t4dHR4xmvm84HNgRngGKGF4fny
+6BXkPSyDguP+L5zozdWDb8dWTQejRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMB
+Af8ECDAGAQH/AgEBMB0GA1UdDgQWBBQRldx2pzX9U+YvH7w4dt/ZbeVvQzAKBggq
+hkjOPQQDAgNIADBFAiEAkCQcOP+PmyVIMgr/cUsk04qH8lXYO4DqDuH1WSNvGfEC
+IBZQGRehpZ604FgkD0YqmiGRV/OzU99em0g3jkmWJbJY
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/OU=jnj/OU=client/CN=jnj-ldap-server
+issuer=/C=US/ST=WA/L=Bellevue/O=Johnson & Johnson/OU=jnj/OU=client/CN=rca-jnj-admin
+---
+No client certificate CA names sent
+---
+SSL handshake has read 2268 bytes and written 512 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-ECDSA-AES256-GCM-SHA384
+Server public key is 256 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-ECDSA-AES256-GCM-SHA384
+    Session-ID: EC50755A7D3FB1F3A267415D20A66F1A16FB7AD567D52785C5A63C349830C22E
+    Session-ID-ctx: 
+    Master-Key: F0DB10C64D760832436D23F081275122D54DF0128080E54F40A965352924C869CB0A4EC2782620D3F3797D5F02C4A618
+    Start Time: 1556037291
+    Timeout   : 300 (sec)
+    Verify return code: 7 (certificate signature failure)
+---
+
+
